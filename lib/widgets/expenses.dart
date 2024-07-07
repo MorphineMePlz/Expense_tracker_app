@@ -17,9 +17,11 @@ class _ExpensesState extends State<Expenses> {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      body: Column(
-        children: [const Text( "Chart"), Expanded(child: ExpensesList(expenses: _registeredExpenses))],
+    return  SafeArea(
+      child: Scaffold( appBar: AppBar(actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.add))],),
+        body: Column(
+          children: [const Text( "Chart"), Expanded(child: ExpensesList(expenses: _registeredExpenses))],
+        ),
       ),
     );
   }
